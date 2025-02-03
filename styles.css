@@ -449,6 +449,20 @@ body {
     transform: translateY(-2px);
 }
 
+.cta-button.secondary {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--white);
+    border: 2px solid var(--white);
+    backdrop-filter: blur(5px);
+}
+
+.cta-button.secondary:hover {
+    background: var(--white);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 /* Glowing Effect */
 .glow-on-hover {
     position: relative;
@@ -1142,13 +1156,17 @@ footer {
 }
 
 .footer-section a {
-    color: var(--primary-color);
+    color: var(--gray-400);
     text-decoration: none;
-    transition: var(--transition);
+    transition: color 0.3s ease;
 }
 
 .footer-section a:hover {
-    color: var(--accent-color);
+    color: var(--white);
+}
+
+.footer-section ul a li {
+    margin-bottom: 0.5rem;
 }
 
 /* Reviews Section Styles */
@@ -2402,5 +2420,223 @@ footer {
 
     .info-box {
         margin: 1rem;
+    }
+}
+
+.cta-section {
+    text-align: center;
+    padding: 4rem 0;
+    background: var(--light-bg);
+}
+
+.cta-container {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.cta-container h3 {
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.cta-button.primary {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.cta-button.primary:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* FAQ Page Styles */
+.faq-hero {
+    height: 60vh;
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+    ), url('images/faq-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    margin-top: 76px;
+}
+
+.faq-section {
+    padding: 5rem 0;
+    background: var(--light-bg);
+}
+
+.faq-grid {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.faq-item {
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.faq-question {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+    background: var(--gray-100);
+}
+
+.faq-question h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+.faq-question i {
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+    padding: 1.5rem;
+    max-height: 500px;
+}
+
+.faq-answer p {
+    margin-bottom: 1rem;
+}
+
+.faq-answer ul {
+    list-style: none;
+    padding-left: 1.5rem;
+}
+
+.faq-answer li {
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.faq-answer li:before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    left: -1rem;
+}
+
+@media (max-width: 768px) {
+    .faq-grid {
+        padding: 0 1rem;
+    }
+    
+    .faq-question h3 {
+        font-size: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+/* Weather Widget Styles */
+.weather-section {
+    padding: 4rem 0;
+    background: var(--light-bg);
+}
+
+.weather-widget {
+    max-width: 400px;
+    margin: 0 auto;
+    background: var(--white);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.weather-widget:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.weather-current {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.weather-icon {
+    font-size: 4rem;
+    color: var(--primary-color);
+}
+
+.weather-info .temperature {
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.weather-info .description {
+    font-size: 1.2rem;
+    color: var(--gray-500);
+    text-transform: capitalize;
+}
+
+.weather-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--gray-200);
+}
+
+.weather-details .detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.weather-details .detail i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.weather-details .detail span {
+    font-size: 0.9rem;
+    color: var(--gray-500);
+}
+
+@media (max-width: 768px) {
+    .weather-widget {
+        margin: 0 1rem;
     }
 }

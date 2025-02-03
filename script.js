@@ -165,4 +165,95 @@ function setupReviewSlider() {
         currentIndex = (currentIndex + 1) % cards.length;
         showCard(currentIndex);
     });
-} 
+}
+
+// Add this to your existing script.js
+document.addEventListener('DOMContentLoaded', function() {
+    // FAQ Functionality
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        question.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+            
+            // Close all other items
+            faqItems.forEach(otherItem => {
+                otherItem.classList.remove('active');
+            });
+            
+            // Toggle current item
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        });
+    });
+});
+
+// Weather functionality
+function updateWeather() {
+    // Bar Harbor coordinates
+    const latitude = 44.3876;
+    const longitude = -68.2039;
+    
+    // First, get the forecast office and grid coordinates
+    fetch(`https://api.weather.gov/points/${latitude},${longitude}`)
+        .then(response => response.json())
+        .then(data => {
+            // Get the forecast URL from the response
+            const forecastUrl = data.properties.forecast;
+            return fetch(forecastUrl);
+        })
+        .then(response => response.json())
+        .then(data => {
+            const currentPeriod = data.properties.periods[0];
+            
+            const weatherIcon = document.querySelector('.weather-icon');
+            const temp = document.querySelector('.temp');
+            const description = document.querySelector('.description');
+            const wind = document.querySelector('.wind');
+            
+            // Update the weather information
+            temp.textContent = currentPeriod.temperature;
+            description.textContent = currentPeriod.shortForecast;
+            wind.textContent = `${currentPeriod.windSpeed}`;
+            
+            // Set weather icon based on the forecast
+            weatherIcon.innerHTML = getWeatherIconNWS(currentPeriod.shortForecast);
+        })
+        .catch(error => {
+            console.error('Error fetching weather:', error);
+        });
+}
+
+function getWeatherIconNWS(forecast) {
+    const lowerForecast = forecast.toLowerCase();
+    
+    if (lowerForecast.includes('sunny')) {
+        return '<i class="fas fa-sun"></i>';
+    } else if (lowerForecast.includes('clear')) {
+        return '<i class="fas fa-moon"></i>';
+    } else if (lowerForecast.includes('cloudy') && lowerForecast.includes('partly')) {
+        return '<i class="fas fa-cloud-sun"></i>';
+    } else if (lowerForecast.includes('cloudy')) {
+        return '<i class="fas fa-cloud"></i>';
+    } else if (lowerForecast.includes('rain') && lowerForecast.includes('light')) {
+        return '<i class="fas fa-cloud-rain"></i>';
+    } else if (lowerForecast.includes('rain')) {
+        return '<i class="fas fa-cloud-showers-heavy"></i>';
+    } else if (lowerForecast.includes('snow')) {
+        return '<i class="fas fa-snowflake"></i>';
+    } else if (lowerForecast.includes('thunder')) {
+        return '<i class="fas fa-bolt"></i>';
+    } else {
+        return '<i class="fas fa-cloud"></i>';
+    }
+}
+
+// Update weather when page loads
+document.addEventListener('DOMContentLoaded', () => {
+    updateWeather();
+    // Update weather every hour
+    setInterval(updateWeather, 3600000);
+}); 
