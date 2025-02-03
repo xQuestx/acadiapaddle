@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Kayaks - Acadia Paddle</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Dancing+Script:wght@600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo hover-float">
+            <img src="logo.jpg" alt="Acadia Paddle Logo">
+            <span>Acadia Paddle</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="rentals.html"><i class="fas fa-clock"></i> Rentals</a>
+            <a href="kayaks.html" class="active"><i class="fas fa-ship"></i> Our Equipment</a>
+            <a href="pictures.html"><i class="fas fa-camera"></i> Pictures</a>
+            <a href="contract.html" class="book-now pulse"><i class="fas fa-calendar-check"></i> Book Now</a>
+        </div>
+        <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <header class="hero kayak-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Our Kayaks</h1>
+            <p class="tagline">Premium Old Town Kayaks for Your Acadia Adventure</p>
+            <div class="hero-features">
+                <div class="hero-feature">
+                    <i class="fas fa-ship"></i>
+                    <span>Premium Old Town Kayaks</span>
+                </div>
+                <div class="hero-feature">
+                    <i class="fas fa-truck-fast"></i>
+                    <span>Delivered to Your Door</span>
+                </div>
+                <div class="hero-feature">
+                    <i class="fas fa-life-ring"></i>
+                    <span>All Safety Equipment Included</span>
+                </div>
+            </div>
+            <div class="cta-buttons">
+                <a href="tel:207-801-1531" class="cta-button primary"><i class="fas fa-phone"></i> Book Your Adventure</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="kayak-info-section">
+            <div class="container">
+                <div class="info-tabs fade-in">
+                    <div class="tab-navigation">
+                        <button class="tab-btn active" data-tab="paddle-boards">
+                            <i class="fas fa-water"></i>
+                            Paddle Boards
+                        </button>
+                        <button class="tab-btn" data-tab="kayaks">
+                            <i class="fas fa-ship"></i>
+                            Kayaks
+                        </button>
+                    </div>
+
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="paddle-boards">
+                            <div class="equipment-info">
+                                <div class="info-header">
+                                    <h3>Stand Up Paddle Board Details</h3>
+                                    <p class="subtitle">Premium Equipment for Your Adventure</p>
+                                </div>
+                                <div class="info-grid">
+                                    <div class="info-col">
+                                        <h4><i class="fas fa-info-circle"></i> Equipment Specs</h4>
+                                        <ul class="feature-list">
+                                            <li><i class="fas fa-check"></i> Solid Construction (Non-inflatable)</li>
+                                            <li><i class="fas fa-check"></i> 10 feet long, 40 pounds</li>
+                                            <li><i class="fas fa-check"></i> Center & End Handles for Easy Carrying</li>
+                                            <li><i class="fas fa-check"></i> Retractable Rudder System</li>
+                                        </ul>
+                                    </div>
+                                    <div class="info-col">
+                                        <h4><i class="fas fa-star"></i> Features</h4>
+                                        <ul class="feature-list">
+                                            <li><i class="fas fa-check"></i> Universal Camera Mount</li>
+                                            <li><i class="fas fa-check"></i> Bungee Storage System</li>
+                                            <li><i class="fas fa-check"></i> Stable, Multi-Purpose Design</li>
+                                            <li><i class="fas fa-check"></i> Perfect for All Skill Levels</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="activities-section">
+                                    <h4><i class="fas fa-compass"></i> Perfect For:</h4>
+                                    <div class="activity-tags">
+                                        <span class="badge"><i class="fas fa-person-swimming"></i> Swimming</span>
+                                        <span class="badge"><i class="fas fa-fish"></i> Fishing</span>
+                                        <span class="badge"><i class="fas fa-book"></i> Relaxing</span>
+                                        <span class="badge"><i class="fas fa-camera"></i> Photography</span>
+                                        <span class="badge"><i class="fas fa-water"></i> Paddling</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane" id="kayaks">
+                            <div class="equipment-info">
+                                <div class="info-header">
+                                    <h3>Kayak Details</h3>
+                                    <p class="subtitle">Old Town Quality & Reliability</p>
+                                </div>
+                                <div class="info-grid">
+                                    <div class="info-col">
+                                        <h4><i class="fas fa-info-circle"></i> Single Kayaks</h4>
+                                        <ul class="feature-list">
+                                            <li><i class="fas fa-check"></i> 10-11 feet long</li>
+                                            <li><i class="fas fa-check"></i> 40-45 pounds</li>
+                                            <li><i class="fas fa-check"></i> Rear Dry Storage</li>
+                                            <li><i class="fas fa-check"></i> Stable Design</li>
+                                        </ul>
+                                    </div>
+                                    <div class="info-col">
+                                        <h4><i class="fas fa-users"></i> Tandem Kayaks</h4>
+                                        <ul class="feature-list">
+                                            <li><i class="fas fa-check"></i> 13.5 feet long</li>
+                                            <li><i class="fas fa-check"></i> 60 pounds</li>
+                                            <li><i class="fas fa-check"></i> Two-Person Capacity</li>
+                                            <li><i class="fas fa-check"></i> Rear Bungee Storage</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section fade-in">
+            <div class="container">
+                <div class="contact-content">
+                    <h2 class="section-title">Book Your Kayak</h2>
+                    <p class="location">Located right on Mount Desert Island in Bar Harbor!</p>
+                    <div class="contact-info">
+                        <p>Please contact us with any questions:</p>
+                        <p>Phone: <a href="tel:207-801-1531">207-801-1531</a></p>
+                        <p>Email: <a href="mailto:AcadiaPaddle@gmail.com">AcadiaPaddle@gmail.com</a></p>
+                        <p>Follow us on <a href="https://facebook.com/AcadiaPaddle" class="social-link"><i class="fab fa-facebook"></i> Facebook</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-compass"></i> Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="rentals.html">Rentals</a></li>
+                    <li><a href="kayaks.html">Our Equipment</a></li>
+                    <li><a href="#book">Book Now</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3><i class="fas fa-phone"></i> Contact Us</h3>
+                <ul>
+                    <li>Phone: <a href="tel:207-801-1531">207-801-1531</a></li>
+                    <li>Email: <a href="mailto:AcadiaPaddle@gmail.com">AcadiaPaddle@gmail.com</a></li>
+                    <li>Located in Bar Harbor, ME</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3><i class="fas fa-clock"></i> Hours</h3>
+                <ul>
+                    <li>Open 7 Days a Week</li>
+                    <li>May - October</li>
+                    <li>8:00 AM - 6:00 PM</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <img src="logo.jpg" alt="Acadia Paddle Logo" class="footer-logo">
+                <div class="social-links">
+                    <a href="https://facebook.com/AcadiaPaddle"><i class="fab fa-facebook"></i></a>
+                    <a href="https://instagram.com/AcadiaPaddle"><i class="fab fa-instagram"></i></a>
+                </div>
+                <p class="copyright">&copy; 2024 Acadia Paddle. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
